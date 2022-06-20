@@ -1,22 +1,24 @@
-package BO.Tp.eu.unareil.bo;
+package BO.Tp.eu.unareil.bo.panier;
+
+import BO.Tp.eu.unareil.bo.Produits.Produit;
 
 public class Ligne {
-    private Produits p ;
+    private Produit Produit ;
     private Integer quantite;
 
-    public Ligne(Produits p, Integer quantite) {
+    public Ligne(Produit p, Integer quantite) {
         setP(p);
         setQuantite(quantite);
     }
 
-    public Produits getP() {
-        return p;
+    public Produit getProduit() {
+        return Produit;
     }
     public  Double getPrix(){
-        return p.getPrixUnitaire().doubleValue() * getQuantite();
+        return Produit.getPrixUnitaire().doubleValue() * getQuantite();
     }
-    public void setP(Produits p) {
-        this.p = p;
+    public void setP(Produit p) {
+        this.Produit = p;
     }
 
     public Integer getQuantite() {
@@ -29,8 +31,8 @@ public class Ligne {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Ligne{");
-        sb.append("p=").append(p);
+        final StringBuffer sb = new StringBuffer("Ligne {");
+        sb.append("Produit=").append(Produit);
         sb.append(", quantite=").append(quantite);
         sb.append('}');
         return sb.toString();

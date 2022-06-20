@@ -1,18 +1,18 @@
-package BO.Tp.eu.unareil.bo.nonPerissable;
+package BO.Tp.eu.unareil.bo.Produits.nonPerissable;
 
-import BO.Tp.eu.unareil.bo.Produits;
+import BO.Tp.eu.unareil.bo.Produits.Produit;
 
-public class Stylo extends Produits {
+public class Stylo extends Produit {
     private String couleur;
     private String typeMine;
 
-    public Stylo(Long refProd, String marque, String libelle, Long qteStock, Float prixUnitaire, String couleur, String typeMine) {
+    public Stylo(Long refProd, String marque, String libelle, long qteStock, Float prixUnitaire, String couleur, String typeMine) {
         super(refProd, marque, libelle, qteStock, prixUnitaire);
         setCouleur(couleur);
         setTypeMine(typeMine);
     }
 
-    public Stylo(String marque, String libelle, Long qteStock, Float prixUnitaire, String couleur, String typeMine) {
+    public Stylo(String marque, String libelle, long qteStock, Float prixUnitaire, String couleur, String typeMine) {
         super(marque, libelle, qteStock, prixUnitaire);
 
         setCouleur(couleur);
@@ -39,7 +39,7 @@ public class Stylo extends Produits {
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("Stylo{");
-        super.toStringChild();
+        sb.append(super.toStringChild());
         sb.append("couleur='").append(couleur).append('\'');
         sb.append(", typeMine='").append(typeMine).append('\'');
         sb.append('}');

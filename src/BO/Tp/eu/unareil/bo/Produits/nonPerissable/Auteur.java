@@ -1,10 +1,10 @@
-package BO.Tp.eu.unareil.bo.nonPerissable;
+package BO.Tp.eu.unareil.bo.Produits.nonPerissable;
 
-public class Auteurs {
+public class Auteur {
     private String nom;
     private String prenom;
 
-    public Auteurs(String nom, String prenom) {
+    public Auteur(String nom, String prenom) {
 
         setNom(nom);
         setPrenom(prenom);

@@ -1,26 +1,26 @@
-package BO.Tp.eu.unareil.bo;
+package BO.Tp.eu.unareil.bo.Produits;
 
 import java.time.LocalDate;
 
 
-public abstract class ProduitPerissable extends Produits{
+public abstract class ProduitPerissable extends Produit {
     private LocalDate dateLimiteConso;
 
-    public ProduitPerissable(Long refProd, LocalDate dateLimiteConso, String marque, String libelle, Long qteStock, Float prixUnitaire) {
+    public ProduitPerissable(long refProd, LocalDate dateLimiteConso, String marque, String libelle, long qteStock, Float prixUnitaire) {
         super(refProd, marque, libelle, qteStock, prixUnitaire);
         setDateLimiteConso(dateLimiteConso);
     }
 
-    public ProduitPerissable( LocalDate dateLimiteConso ,String marque, String libelle, Long qteStock, Float prixUnitaire) {
+    public ProduitPerissable( LocalDate dateLimiteConso ,String marque, String libelle, long qteStock, Float prixUnitaire) {
         super(marque, libelle, qteStock, prixUnitaire);
         setDateLimiteConso(dateLimiteConso);
     }
 
-    public ProduitPerissable(Long refProd, String marque, String libelle, Long qteStock, Float prixUnitaire) {
+    public ProduitPerissable(long refProd, String marque, String libelle, long qteStock, Float prixUnitaire) {
         super(refProd, marque, libelle, qteStock, prixUnitaire);
     }
 
-    public ProduitPerissable(String marque, String libelle, Long qteStock, Float prixUnitaire) {
+    public ProduitPerissable(String marque, String libelle, long qteStock, Float prixUnitaire) {
         super(marque, libelle, qteStock, prixUnitaire);
     }
 
@@ -35,16 +35,16 @@ public abstract class ProduitPerissable extends Produits{
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("ProduitPerissable{");
+        sb.append(super.toStringChild());
         sb.append("dateLimiteConso=").append(dateLimiteConso);
         sb.append('}');
         return sb.toString();
     }
     @Override
-    public String toStringChild() {
-        final StringBuffer sb = new StringBuffer("ProduitPerissable{");
-        super.toStringChild();
+    public String  toStringChild() {
+        final StringBuffer sb = new StringBuffer();
+        sb.append(super.toStringChild());
         sb.append("dateLimiteConso=").append(dateLimiteConso);
-        sb.append('}');
         return sb.toString();
     }
 }

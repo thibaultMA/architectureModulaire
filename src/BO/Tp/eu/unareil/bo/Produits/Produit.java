@@ -1,13 +1,14 @@
-package BO.Tp.eu.unareil.bo;
+package BO.Tp.eu.unareil.bo.Produits;
 
-public abstract class Produits {
+public abstract class Produit {
+    private static Long tt =0L;
     private Long refProd;
     private String libelle;
     private String marque;
     private Float prixUnitaire;
     private Long qteStock;
 
-    public Produits(Long refProd, String marque , String libelle,Long qteStock, Float prixUnitaire ) {
+    public Produit(Long refProd, String marque , String libelle, long qteStock, Float prixUnitaire ) {
         setRefProd(refProd);
         setLibelle(libelle);
         setMarque(marque);
@@ -15,7 +16,9 @@ public abstract class Produits {
         setQteStock(qteStock);
     }
 
-    public Produits(String marque, String libelle , Long qteStock, Float prixUnitaire) {
+    public Produit(String marque, String libelle , Long qteStock, Float prixUnitaire) {
+        ++tt;
+        setRefProd(tt);
         setLibelle(libelle);
         setMarque(marque);
         setPrixUnitaire(prixUnitaire);
@@ -27,6 +30,7 @@ public abstract class Produits {
     }
 
     public void setRefProd(Long refProd) {
+
         this.refProd = refProd;
     }
 
@@ -74,7 +78,8 @@ public abstract class Produits {
         return sb.toString();
     }
 
-    public String toStringChild() {
+
+    public String  toStringChild() {
         final StringBuffer sb = new StringBuffer();
         sb.append("refProd=").append(refProd);
         sb.append(", libelle='").append(libelle).append('\'');

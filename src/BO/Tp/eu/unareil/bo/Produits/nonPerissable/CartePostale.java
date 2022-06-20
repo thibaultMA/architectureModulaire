@@ -1,15 +1,16 @@
-package BO.Tp.eu.unareil.bo.nonPerissable;
+package BO.Tp.eu.unareil.bo.Produits.nonPerissable;
 
-import BO.Tp.eu.unareil.bo.Produits;
+import BO.Tp.eu.unareil.bo.Produits.Produit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartePostale extends Produits {
-    private List<Auteurs> lesAuteurs = new ArrayList<>();
+public class CartePostale extends Produit {
+
+    private List<Auteur> lesAuteurs = new ArrayList<>();
     private String type;
 
-    public CartePostale(Long refProd, String marque, String libelle, Long qteStock, Float prixUnitaire, List<Auteurs> lesAuteurs, String type) {
+    public CartePostale(Long refProd, String marque, String libelle, long qteStock, Float prixUnitaire, List<Auteur> lesAuteurs, String type) {
         super(refProd, marque, libelle, qteStock, prixUnitaire);
         this.lesAuteurs = lesAuteurs;
         setLesAuteurs(lesAuteurs);
@@ -17,17 +18,17 @@ public class CartePostale extends Produits {
 
     }
 
-    public CartePostale(String marque, String libelle, Long qteStock, Float prixUnitaire, List<Auteurs> lesAuteurs, String type) {
+    public CartePostale(String marque, String libelle, long qteStock, Float prixUnitaire, List<Auteur> lesAuteurs, String type) {
         super(marque, libelle, qteStock, prixUnitaire);
         setLesAuteurs(lesAuteurs);
         this.type = type;
     }
 
-    public List<Auteurs> getLesAuteurs() {
+    public List<Auteur> getLesAuteurs() {
         return lesAuteurs;
     }
 
-    public void setLesAuteurs(List<Auteurs> lesAuteurs) {
+    public void setLesAuteurs(List<Auteur> lesAuteurs) {
         this.lesAuteurs.addAll(lesAuteurs);
     }
 
@@ -42,7 +43,7 @@ public class CartePostale extends Produits {
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("CartePostale{");
-        super.toStringChild();
+        sb.append(super.toStringChild());
         sb.append("lesAuteurs=").append(lesAuteurs);
         sb.append(", type='").append(type).append('\'');
         sb.append('}');
