@@ -1,5 +1,7 @@
 package BO.Tp.eu.unareil.bo.Produits;
 
+import java.text.DecimalFormat;
+
 public abstract class Produit {
     private static Long tt =0L;
     private Long refProd;
@@ -65,27 +67,31 @@ public abstract class Produit {
     public void setQteStock(Long qteStock) {
         this.qteStock = qteStock;
     }
+    private String formatDecimal(float unformat){
+        DecimalFormat o = new DecimalFormat("#0.00");
+        return o.format(unformat);
+    }
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Produits{");
+        final StringBuffer sb = new StringBuffer("\nProduits{");
         sb.append("refProd=").append(refProd);
         sb.append(", libelle='").append(libelle).append('\'');
         sb.append(", marque='").append(marque).append('\'');
-        sb.append(", prixUnitaire=").append(prixUnitaire);
+        sb.append(", prixUnitaire=").append(formatDecimal(prixUnitaire)).append("€");
         sb.append(", qteStock=").append(qteStock);
         sb.append('}');
         return sb.toString();
     }
 
-
     public String  toStringChild() {
-        final StringBuffer sb = new StringBuffer();
-        sb.append("refProd=").append(refProd);
-        sb.append(", libelle='").append(libelle).append('\'');
-        sb.append(", marque='").append(marque).append('\'');
-        sb.append(", prixUnitaire=").append(prixUnitaire);
-        sb.append(", qteStock=").append(qteStock);
+
+        final StringBuffer sb = new StringBuffer('\n');
+        sb.append("             refProd=").append(refProd).append(",\n");
+        sb.append("             libelle='").append(libelle).append("',\n");
+        sb.append("             marque='").append(marque).append("',\n");
+        sb.append("             prixUnitaire= ").append(formatDecimal(prixUnitaire)).append("€ ,\n");
+        sb.append("             qteStock=").append(qteStock).append(", \n");
         return sb.toString();
     }
 }

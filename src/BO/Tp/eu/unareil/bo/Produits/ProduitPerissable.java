@@ -36,7 +36,7 @@ public abstract class ProduitPerissable extends Produit {
     public String toString() {
         final StringBuffer sb = new StringBuffer("ProduitPerissable{");
         sb.append(super.toStringChild());
-        sb.append("dateLimiteConso=").append(dateLimiteConso);
+        sb.append("dateLimiteConso =").append(dateLimiteConso).append("\n");
         sb.append('}');
         return sb.toString();
     }
@@ -44,7 +44,7 @@ public abstract class ProduitPerissable extends Produit {
     public String  toStringChild() {
         final StringBuffer sb = new StringBuffer();
         sb.append(super.toStringChild());
-        sb.append("dateLimiteConso=").append(dateLimiteConso);
+        sb.append("             dateLimiteConso= ").append(dateLimiteConso).append(",\n");
         return sb.toString();
     }
 }

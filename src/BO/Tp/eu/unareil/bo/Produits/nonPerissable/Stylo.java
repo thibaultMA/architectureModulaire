@@ -38,11 +38,11 @@ public class Stylo extends Produit {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Stylo{");
+        final StringBuffer sb = new StringBuffer("Stylo{\n");
         sb.append(super.toStringChild());
-        sb.append("couleur='").append(couleur).append('\'');
-        sb.append(", typeMine='").append(typeMine).append('\'');
-        sb.append('}');
+        sb.append("             couleur='").append(couleur).append("',\n");
+        sb.append("             typeMine='").append(typeMine).append("',\n");
+        sb.append("           }");
         return sb.toString();
     }
 }

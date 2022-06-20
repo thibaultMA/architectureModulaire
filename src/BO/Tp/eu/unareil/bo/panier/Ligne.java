@@ -31,10 +31,10 @@ public class Ligne {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Ligne {");
-        sb.append("Produit=").append(Produit);
-        sb.append(", quantite=").append(quantite);
-        sb.append('}');
+        final StringBuffer sb = new StringBuffer("\n    Ligne {");
+        sb.append("\n       Produit=").append(Produit);
+        sb.append(",\n   quantite=").append(quantite);
+        sb.append("\n   }");
         return sb.toString();
     }
 }

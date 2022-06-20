@@ -2,6 +2,7 @@ package BO.Tp.eu.unareil.bo.panier;
 
 import BO.Tp.eu.unareil.bo.Produits.Produit;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class Achat {
     }
 
     private void calculMontant() {
+        Montant = 0D;
         for (Ligne ligne : listAchat) {
             Montant += ligne.getPrix();
         }
@@ -45,16 +47,21 @@ public class Achat {
     }
     public void modifieLigne(Integer index,Integer nouvelleQte) {
         getLigne(index).setQuantite(nouvelleQte);
+        calculMontant();
     }
     public void supprimeLigne(int index) {
         listAchat.remove(index);
+        calculMontant();
     }
-
+    private String formatDecimal(Double unformat){
+        DecimalFormat o = new DecimalFormat("#0.00");
+        return o.format(unformat);
+    }
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Achat{");
+        final StringBuffer sb = new StringBuffer("Achat{\n");
         sb.append("listAchat=").append(listAchat);
-        sb.append(", Montant=").append(Montant);
+        sb.append(",\n Montant=").append(formatDecimal(Montant)).append("€");
         sb.append('}');
         return sb.toString();
     }
