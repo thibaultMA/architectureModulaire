@@ -9,6 +9,7 @@ public abstract class Produit {
     private String marque;
     private Float prixUnitaire;
     private Long qteStock;
+    private final String type = String.valueOf(this.getClass());
 
     public Produit(Long refProd, String marque , String libelle, long qteStock, Float prixUnitaire ) {
         setRefProd(refProd);

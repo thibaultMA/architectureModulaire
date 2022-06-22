@@ -12,11 +12,11 @@ public class CartePostale extends Produit {
 
     public CartePostale(Long refProd, String marque, String libelle, long qteStock, Float prixUnitaire, List<Auteur> lesAuteurs, String type) {
         super(refProd, marque, libelle, qteStock, prixUnitaire);
-        this.lesAuteurs = lesAuteurs;
         setLesAuteurs(lesAuteurs);
         this.type = type;
 
     }
+
 
     public CartePostale(String marque, String libelle, long qteStock, Float prixUnitaire, List<Auteur> lesAuteurs, String type) {
         super(marque, libelle, qteStock, prixUnitaire);
@@ -31,6 +31,7 @@ public class CartePostale extends Produit {
     public void setLesAuteurs(List<Auteur> lesAuteurs) {
         this.lesAuteurs.addAll(lesAuteurs);
     }
+
 
     public String getType() {
         return type;

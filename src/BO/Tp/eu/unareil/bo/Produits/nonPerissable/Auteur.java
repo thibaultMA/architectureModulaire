@@ -1,14 +1,17 @@
 package BO.Tp.eu.unareil.bo.Produits.nonPerissable;
 
 public class Auteur {
+    private Long id;
     private String nom;
     private String prenom;
 
     public Auteur(String nom, String prenom) {
-
         setNom(nom);
         setPrenom(prenom);
+    }
 
+    public Long getId() {
+        return id;
     }
 
     public String getNom() {
